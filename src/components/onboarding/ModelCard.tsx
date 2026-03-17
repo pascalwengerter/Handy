@@ -129,9 +129,9 @@ const ModelCard: React.FC<ModelCardProps> = ({
         .join(" ")}
     >
       {/* Top section: name/description + score bars */}
-      <div className="flex justify-between items-center w-full">
+      <div className="flex justify-between items-start w-full">
         <div className="flex flex-col items-start flex-1 min-w-0">
-          <div className="flex items-center gap-3 flex-wrap">
+          <div className="flex items-center gap-x-3 gap-y-2 flex-wrap">
             <h3
               className={`text-base font-semibold text-text ${isClickable ? "group-hover:text-logo-primary" : ""} transition-colors`}
             >
@@ -156,15 +156,15 @@ const ModelCard: React.FC<ModelCardProps> = ({
               </Badge>
             )}
           </div>
-          <p className="text-text/60 text-sm leading-relaxed">
+          <p className="text-text/60 text-sm leading-relaxed mt-1">
             {displayDescription}
           </p>
         </div>
         {(model.accuracy_score > 0 || model.speed_score > 0) && (
-          <div className="hidden sm:flex items-center ml-4">
+          <div className="hidden sm:flex items-center ml-4 mt-1">
             <div className="space-y-1">
-              <div className="flex items-center gap-2">
-                <p className="text-xs text-text/60 w-14 text-right">
+              <div className="flex items-center justify-end gap-2">
+                <p className="text-xs text-text/60 whitespace-nowrap">
                   {t("onboarding.modelCard.accuracy")}
                 </p>
                 <div className="w-16 h-1.5 bg-mid-gray/20 rounded-full overflow-hidden">
@@ -174,8 +174,8 @@ const ModelCard: React.FC<ModelCardProps> = ({
                   />
                 </div>
               </div>
-              <div className="flex items-center gap-2">
-                <p className="text-xs text-text/60 w-14 text-right">
+              <div className="flex items-center justify-end gap-2">
+                <p className="text-xs text-text/60 whitespace-nowrap">
                   {t("onboarding.modelCard.speed")}
                 </p>
                 <div className="w-16 h-1.5 bg-mid-gray/20 rounded-full overflow-hidden">
